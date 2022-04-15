@@ -167,7 +167,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mxhanks.github.io/2022/03/19/%E5%9B%BE%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="https://mxhanks.github.io/2022/04/15/Log2%E9%A2%84%E5%A4%84%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://www.gx8899.com/uploads/allimg/2016072420/mx2ajr15fsg.gif">
@@ -181,7 +181,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/03/19/%E5%9B%BE%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-title-link" itemprop="url">图论学习笔记（一）</a>
+            <a href="/2022/04/15/Log2%E9%A2%84%E5%A4%84%E7%90%86/" class="post-title-link" itemprop="url">Log₂预处理</a>
         </h2>
 
         <div class="post-meta">
@@ -192,7 +192,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-03-19 08:03:24 / 修改时间：10:45:08" itemprop="dateCreated datePublished" datetime="2022-03-19T08:03:24+08:00">2022-03-19</time>
+              <time title="创建时间：2022-04-15 15:04:03 / 修改时间：15:11:32" itemprop="dateCreated datePublished" datetime="2022-04-15T15:04:03+08:00">2022-04-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
             </span>
 
           
@@ -204,8 +213,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2022/03/19/%E5%9B%BE%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/03/19/%E5%9B%BE%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/04/15/Log2%E9%A2%84%E5%A4%84%E7%90%86/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/04/15/Log2%E9%A2%84%E5%A4%84%E7%90%86/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -215,14 +224,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.9k</span>
+              <span>235</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -234,86 +243,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="最短路">最短路</h2>
-<blockquote>
-<p>图上两点之间最短的距离就是最短路。 ### 单源最短路
-所谓单源最短路，就是固定出发点【源头】，求其到达其他所有点的距离 ####
-dijkstra <img
-src="https://img-blog.csdnimg.cn/20190531120636775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzI2MjY3,size_16,color_FFFFFF,t_70" />
-图中我们设从点 <span class="math inline">\(1\)</span> 为出发点，要求点
-<span class="math inline">\(1\)</span> 到其他点的最短位置。<br />
-我们用 <span class="math inline">\(dis\)</span>
-数组表示两点之间的距离，则要<code>dis[1]=-1, dis[其他点]=∞</code>。<br />
-从 <span class="math inline">\(1\)</span> 开始，我们先走过和 <span
-class="math inline">\(1\)</span> 连出去的所有边，更新节点 <span
-class="math inline">\(2\)</span> 、 <span
-class="math inline">\(3\)</span> 、 <span
-class="math inline">\(4\)</span>
-。而后又可以从这三个节点选择一个继续搜下去。因为我们求的是最短路，所以我们选一个目前
-<span class="math inline">\(dis\)</span>
-最小的节点进行扩展。假设当前节点为 <span
-class="math inline">\(u\)</span> ，扩展到的节点为 <span
-class="math inline">\(v\)</span> ，两点之间边权为 <span
-class="math inline">\(w\)</span> ，只要在扩展图中发现存在
-<code>dis[u] + w &lt; dis[v]</code> 就可以直接更新 <span
-class="math inline">\(dis[v]\)</span>
-的值了。也就是说每次都找到一个点来更新其他所有点的 <span
-class="math inline">\(dis\)</span>，这样下来时间复杂度为 <span
-class="math inline">\(O(n^2)\)</span>。核心代码如下：【这是最原始和暴力的写法，邻接矩阵存图】<br />
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dij</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">0x3f</span>, <span class="keyword">sizeof</span> dis);</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span> vis);</span><br><span class="line">    dis[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="comment">//当前dis最小的点</span></span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// vis的作用是保证每个点全局只被用来更新别的点一次。</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!vis[j] &amp;&amp; (x == <span class="number">0</span> || dis[j] &lt; dis[x])) &#123;</span><br><span class="line">                x = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        vis[x] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">            <span class="comment">// g是邻接矩阵</span></span><br><span class="line">            dis[j] = <span class="built_in">min</span>(dis[j], dis[x] + g[x][j]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-但是看起来代码很简短，不论是时间还是空间，复杂度都很高。所以就有了 <span
-class="math inline">\(dijkstra\)</span> 的堆优化——不用每次 <span
-class="math inline">\(O(n)\)</span> 地找最小的 <span
-class="math inline">\(dis\)</span>
-节点，而是用一个堆来维护，这样复杂度就可以降到<span
-class="math inline">\(O(mlog_n)\)</span>。<br />
-</p>
-</blockquote>
-<p>下面是堆优化的核心代码：【优化后用邻接表了 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//优先队列本为大根堆，这里的pair前者用于排序</span></span><br><span class="line">priority_queue&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; q;</span><br><span class="line"><span class="comment">// priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt; &gt;, greater&lt;pair&lt;int,int&gt;</span></span><br><span class="line"><span class="comment">// &gt; &gt; q; 如果不想写大根堆+相反数维护的话，直接这样写小根堆也可以。</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dij</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">0x3f</span>, <span class="keyword">sizeof</span> dis);</span><br><span class="line">    dis[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    q.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>, <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">while</span> (q.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = q.<span class="built_in">top</span>().second;</span><br><span class="line">        <span class="comment">//取出堆顶的点</span></span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="comment">//如果已经被用来更新过别的点了，就不用了</span></span><br><span class="line">        <span class="keyword">if</span> (vis[u])</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        vis[u] = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//这里用邻接表了，因为没有连边的点矩阵也更新不到</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = head[u]; ~i; i = e[i].next) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = e[i].v;</span><br><span class="line">            <span class="keyword">int</span> w = e[i].w;</span><br><span class="line">            <span class="comment">//可以更新</span></span><br><span class="line">            <span class="keyword">if</span> (dis[v] &gt; dis[u] + w) &#123;</span><br><span class="line">                <span class="comment">// dis存相反数是为了在大根堆里得到较小的那一个。</span></span><br><span class="line">                dis[v] = dis[u] + w;</span><br><span class="line">                q.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(-dis[v], v));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 所以说白了，
-<span class="math inline">\(dijkstra\)</span>
-算法的核心就在于每次用当前dis最小的节点去更新别的节点。</p>
-<h4 id="spfa">SPFA</h4>
-<blockquote>
-<p>这个算法是对 <span class="math inline">\(Bellman-ford\)</span>
-算法的一个队列优化。可用于求单源最短路。</p>
-</blockquote>
-<p>如果说 <span class="math inline">\(dijkstra\)</span>
-是步步回头找最小，那么 <span class="math inline">\(SPFA\)</span>
-就是一点一圈扩散去。每到一个点，就直接枚举和它相连的所有边和点，如果走这条路可以更近，那么就更新那个点的
-<span
-class="math inline">\(dis\)</span>。如果那个点不在即将更新的队列里，那就放进去。也就是十分类似于
-<span class="math inline">\(BFS\)</span>
-的一种做法。在这种做法下，每个点可能被放进队列多次，但是都是带着更新前面的点的
-<span class="math inline">\(dis\)</span>
-的可能进去的。这样不断更新，直到已经没有哪个点更新别的点，就说明已经得到最短路了。
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">spfa</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">0x3f</span>, <span class="keyword">sizeof</span> dis);</span><br><span class="line">    <span class="comment">// vis记录是否在队列里</span></span><br><span class="line">    dis[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    vis[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    queue&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    q.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">int</span> u, v;</span><br><span class="line">    <span class="keyword">while</span> (q.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        u = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        vis[u] = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//向外发散</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = head[u]; ~i; i = e[i].nxt) &#123;</span><br><span class="line">            v = e[i].to;</span><br><span class="line">            <span class="keyword">if</span> (dis[u] + e[i].w &lt; dis[v]) &#123;</span><br><span class="line">                dis[v] = dis[u] + e[i].w;</span><br><span class="line">                <span class="comment">//不在队列中，那就放进去更新别的点</span></span><br><span class="line">                <span class="keyword">if</span> (!vis[v])</span><br><span class="line">                    q.<span class="built_in">push</span>(v), vis[v] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-两种算法的核心都是找到另一条路来更新当前的最短路，但是实现方法不大一样。某种程度上说，
-<span class="math inline">\(dijkstra\)</span>
-因为即使是堆优化，优先队列的常数也是很大的，而 <span
-class="math inline">\(SPFA\)</span>
-在稀疏图下步步发散就可以跑得很快，所以有时 <span
-class="math inline">\(SPFA\)</span> 可以比 <span
-class="math inline">\(Dijkstra\)</span> 快很多，算法的复杂度可以达到
-<span class="math inline">\(O(km)\)</span> 的级别。但是如果是稠密图的话,
-<span class="math inline">\(SPFA\)</span> 也可以退化到 <span
-class="math inline">\(O(nm)\)</span>
-。所以两种算法也是各有优势，才能一起存活下来。当然，<span
-class="math inline">\(SPFA\)</span>
-也是可以用优先队列的，实现方法最后就和 <span
-class="math inline">\(Dijkstra\)</span> 差不多了。</p>
-<h3 id="多源最短路">多源最短路</h3>
-<h4 id="floyd">Floyd</h4>
-<blockquote>
-<p>这个算法可以在O(n<sup>3)的时间和n</sup>2的空间内求出任意两点之间的最短路。其原理也是十分的简单粗暴——直接看代码都能明白。
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Floyd</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++)<span class="comment">//注意，一定要先枚举中转节点保证三角形的情况</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">				dis[i][j] = <span class="built_in">min</span>(dis[i][j], dis[i][k] + dis[k][j]);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="强连通分量">强连通分量</h2>
-<blockquote>
-<p>在有向图G中，如果两个顶点u，ｖ间有一条从ｕ到ｖ的有向路径，同时还有一条从ｖ到ｕ的有向路径，则称两个顶点强连通。如果有向图G的每两个顶点都强连通，称G是一个强连通图。有向非强连通图的极大强连通子图，称为强连通分量。</p>
-</blockquote>
-<p><img
-src="https://img2018.cnblogs.com/blog/1749451/201909/1749451-20190921121215388-749051872.png" /><br />
-图中，子图{1,2,3,4}为一个强连通分量，因为顶点1,2,3,4两两可达。{5},{6}也分别是两个强连通分量。</p>
+          <h4 id="方法一">方法一</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> Log2[<span class="number">100001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">log_2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">    	Log2[i] = Log2[i / <span class="number">2</span>] + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="方法二">方法二</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> Log2[<span class="number">100001</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">log_2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">    	Log2[i] = Log2[i / <span class="number">2</span>] + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>嘿嘿, 原理啥的自己研究一下就懂了</p>
 
       
     </div>
@@ -1301,7 +1235,7 @@ Node.js这一类的东西，所以花的时间应该比大部分人长。</p>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1358,12 +1292,12 @@ Node.js这一类的东西，所以花的时间应该比大部分人长。</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">32k</span>
+    <span title="站点总字数">29k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">29 分钟</span>
+    <span title="站点阅读时长">27 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
