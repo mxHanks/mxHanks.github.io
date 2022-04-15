@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mxhanks.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="This is my way to solve the problem that you can&#39;t connect to the Extranet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Use Internet Scientifically">
+<meta property="og:url" content="https://mxhanks.github.io/2022/01/11/Use%20Internet%20Scientifically/index.html">
+<meta property="og:site_name" content="mxHanks的Blog">
+<meta property="og:description" content="This is my way to solve the problem that you can&#39;t connect to the Extranet">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-11T13:24:19.129Z">
+<meta property="article:modified_time" content="2022-01-13T10:42:42.224Z">
+<meta property="article:author" content="mxHanks">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://mxhanks.github.io/2022/01/11/Use%20Internet%20Scientifically/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Use Internet Scientifically | mxHanks的Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">mxHanks的Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-guestbook">
+
+    <a href="/guestbook/" rel="section"><i class="fa fa-book fa-fw"></i>留言板</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mxhanks.github.io/2022/01/11/Use%20Internet%20Scientifically/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://www.gx8899.com/uploads/allimg/2016072420/mx2ajr15fsg.gif">
+      <meta itemprop="name" content="mxHanks">
+      <meta itemprop="description" content="越努力，越幸运">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mxHanks的Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Use Internet Scientifically
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-11 21:24:19" itemprop="dateCreated datePublished" datetime="2022-01-11T21:24:19+08:00">2022-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-13 18:42:42" itemprop="dateModified" datetime="2022-01-13T18:42:42+08:00">2022-01-13</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/01/11/Use%20Internet%20Scientifically/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/01/11/Use%20Internet%20Scientifically/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>973</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="8112f057d32f4e19acdca2f3c0710b689b92b2bdd003bf9eb888208e880c33bb">25081c53c98e7fb28a2a2afb6be3d3020e3d2864989936c2c4af36715cd147343d93ab9abe375ad63e99b73eedb1048e2de09bcda940090045d8c1a91e8cfad7fce74d0d07e4126e8b5705a6acd745cab8c50bd5b5e36fc31754c92b4a00e80484b515b587db987403d8e4a214fa18747a1cc6786ec4d12247bbbe186f8a910d2f2e1edc745789ed3aa15448391391a473b668e78a8b79d3042a4001f376352a6bbccb46f84d3762d67e81546b432321c9cdb99b4027526fd197e3a0e5e1777264b8def2b292e8f78fae03e7f3ad6ca45df073d915ce3d005e291fec62eada9c7ec3429e300bec6041367d2eabf7f40d96a2c3045e355cfd7402f03221de45c394e14735ea761b9cdadfa027bbea299f5eca37e341f29ae4cff7598c77a2a38f83aaeaf03de07aba10f714cc83119e925967dc0b0f6be874811f14aef901af34d02e21d71222ad3e05e3d1694b15aade33958ba26a60668a104c79d1a124e9cb0450f2c2917e2a509f0cae95697abebed37e3f62d65afe47e814c952d55d5d5275a9af83803458540bc425103128e3ea628945e644718119a44d504cfee43725cba1b326a830c50007460d98890b9ff70fd3c4e160d410abdef49e88670887dd654d27d2776e3541b37061aba2133a97e3ef9a6dea11ecc5fa25682ae29e7d788904de325e883cacd36ddef74814f406246a0d55a65df231a95325ba77e731174b6da4c85dfe5f6ddbc13fdffbc1e07f40cfb0ca11c45d93cf8f4f692067f195e4f53eca18015139deeb7ccc266852d6513833f0501dda30f0038dd52f5d862202ea221a68135d224c3374ad52f96ecbd9e9e2ade2be2bac79918837b3aa91e5dd869aa0d0c51a85fdcfb58624867cde62412808f02f7f557dcecc65b0e2afa57745702af6fd72c70c5017e210ff6d1f298e80fe3daba0478c8476125151acec587d0eb4591d3a1d8f519eab17342ef70097a687ee9609a069cfc953777b8126695beddc15bb99ac244c373ec5fbd4bc11ce4c96016a64485b0e53e0b68e7283f56e52316c64fd7e41ab2aa0c178417e255f603be0615628e81f480158e3ddf6f95864b7b220869de2c36b78a786390c8254a0c6117457dc9c23f381737611ece465ca141e19131fe08d065db7bc10f48b5cfb5d1a6f068192781cb0faa48c2d18848b2a71e0cc374e5c8efc29929a43fbdaa7152e343fd0897ad828147838eeecda20fd0e790bc41d48a0fd6b14cef384a7df304b8aded16cbc3dabfa645806a81e0486a3633e3379a2ee3e34b3b8d9338fb1bd9a9201d44a9294eb903cee144e862af80e4cbb9ee35469915ca6b2c0f5f313dd66403ad09742d8376904ad0e5adda909d1e3d8cfe81154a8c27dbbf4ee923dcd7159dd549d7233ae5a736a978b416e7283cd98f838599b9fb82b5421f5f32f18032610b43c493ac96d0f26db3cf91a518d5e3db41c9b7c9068550009c422a42fa53220b5ef9d91a28722052bc9c439c6a42ef16dbdf6826c779fd84534fa9e0ebd22171d703edcfd5f482883f37563311313d0ff55386b27bd6a66907db99808723a4a8caf52416c1754565cbd2629df4c67334518a237c6304026cb77111a8797a5752fd1d6ea5028efd784b121e0eee9178abe79eaf2eb142f5751fd7c7d75a77e1f26bf1164ff0620f07fae10f2f103e1e3c9701743c863f0259f7b52c301b6d5e66e97e529fb30efbf2933da114ffde95c4c326ceff04aeae177da219b992bd191942e816c275e9092f96324f34116e0cfb6a04342825ae2f819ba18e33cf784cb22e715695df2d687ca404269037b85001d4b1a0814224d8e8b4f9fff1eacf0a1633919a0946f2d8b9968da5a6643d2a78ae2a21409023d2d7c822c724f85f9cc737a8fe55e83d1cc6113dc42db14bbc5b57c21590c66b8b2f19d49a2dc66481dd851b94aa73cdbeb9f890802ef381787a6afa6ff903bf1d61d464911a52114b7523abdd8e0f756a96bc735fddcbfa61eb1be55173c04c07d58ddba0f4746ce5b58a2a7cddd0147a72a246176b586298fb303295003978293081b3666d7b775acf5465c3d1d7e0573fdbd5b33f718d4a0e36b832c554010aaca3b520bc59cac61835b2c64c09769e227e5f907400fb34d5ff1cc7be6e088e7e62a011ab59c5e6421d2447e1a3f8392daf65432831e3e56c062fe866d6526338be4384753135b892702f5214b1b7762d2909a0b51f31c196a99f902304169d014001f619825a6555d7a8ae5213efd17aaa22684d5f94d99ab2adbd299dc530891820dee84ec4c034a970bf9a8b4286cacb35eebd185661068f0be87d21d2d8d67c1b6b83d3028cee534ac3020dc9cd94da8fb224b3feda0bb085453004fbe6fe3472de8c423a4a1f43951e6d2024bfc28b04715538e19322487e252d8a8e91ac33431a1fd9c38ec9bf45de1d2c79b8104a2144b00fb9f105597200c3127ec9b3795af2110c9b8995d12c32689f38d56d50043c73e564c4a436225b0077ca7f23206a515a8332143320bac5e44db5533dad549e0a0b05d7314040909fc0318718b2c3282d78ace8709ce29d88a811928444c2a350030111ad70ccd46d2284882bd698094e9f2a866f1977f99f46234e9a51864dcf0a88cdd643eb3b096ccf91eecbc5a986d4318e40595e5c967c44d856a1522da1a50ec38e0c76187133970ee91cf82fd579581de598f23392b95460bea15b4e5fd5311f50613a572c83ea0014c1d9046511cb4eae01ea5ba253dd4ca0ae0ebfb1baaf70537e1cec834450e2b7b978aa8e4a0a8dc89a88f14c9ab764227ff3a255f59a1585613398b5342e357c2c37adf59e94c104970aad7968fd5f5b8a937c75466d6c2b3a2b371362d3d166760a4a4d6153e35997a2dd2b554a9200900f903e9411d8705d40ac105fc59585608f5f4963f66f55b01d8c076110954223deee5dd044b52e016b41556b8674a2a963084c1f2151db6170ea586bb758fbef4be667ea7e9ce969af2fbca5af18349f039d12908672c43a8e1b8794e02e30227ecec229db8e8effe09fe7458c49d0e3c8342ec7d555fd2837633bba0310590ed463d44dfc6c39c1406ef33dbbf1c66266f517cc5803d5f4a60baddd49ba0aa20155614a437464c5cc481b8fd1cb35d8f06e37f68d6bde086f6a62109d864ba18c43739dd622fd6063e95643096799aa2ef84551e7f4cd1155e1fe2ee534b237c212f4e881883dcdcc6daccbc565fd966ee64aed3d46b607048e6c8ccebda176ee50114a0e19f2ac73d530ffa57027afb7a4e07b3865d07f4251a464bcc2470e5f8e371800ee29adef83453a5104154efbbf609f079f892d43c00d3ec3154de7abe2b29a388b39b830c3d4288b421a223d25797f243056cdadc8daf871497dd1f8ab52abce35dc1f97e63c476a26e890f8a0fa4f369cac4ea9c102a07470fa437ba28d3bef39eb274d817bb3ca98fcb3f2dbc997d20d022b1683807caaa76b6</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">密码输入框上描述性内容</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/12/05/Tomcat10%20%E8%A7%A3%E5%86%B3%E5%AE%9E%E4%BE%8B%E5%8C%96Servlet%E7%B1%BB500%E9%94%99%E8%AF%AF/" rel="prev" title="Tomcat10 解实例化Servlet类错误(500)">
+      <i class="fa fa-chevron-left"></i> Tomcat10 解实例化Servlet类错误(500)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/03/19/%E5%9B%BE%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" rel="next" title="图论学习笔记（一）">
+      图论学习笔记（一） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="mxHanks"
+      src="https://www.gx8899.com/uploads/allimg/2016072420/mx2ajr15fsg.gif">
+  <p class="site-author-name" itemprop="name">mxHanks</p>
+  <div class="site-description" itemprop="description">越努力，越幸运</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/mxhanks" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;mxhanks" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/" title="https:&#x2F;&#x2F;www.luogu.com.cn" rel="noopener" target="_blank">洛谷</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mxHanks</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">32k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">29 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span>
+  <span class="post-meta-divider">|</span>
+  本站已运行
+  <span id="showDays"></span>
+</span>
+<script>
+  var seconds = 1000;
+  var minutes = seconds * 60;
+  var hours = minutes * 60;
+  var days = hours * 24;
+  var years = days * 365;
+  var birthDay = Date.UTC(2021,10,23,5,29,12); // 这里设置建站时间
+  setInterval(function() {
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var now = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = now - birthDay;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+      document.getElementById('showDays').innerHTML=""+diffYears+"年"+diffDays+"天"+diffHours+"小时"+diffMinutes+"分钟"+diffSeconds+"秒";
+  }, 1000);
+</script>
+
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+var cookieDomain = "https://mxhanks.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+var msgToTraditionalChinese = "繁体"; //此处可以更改为你想要显示的文字
+var msgToSimplifiedChinese = "简体"; //同上，但两处均不建议更改
+var translateButtonId = "translateLink"; //默认互换id
+translateInitilization();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'ywLqntjyMR4p6fIPJhOrNnmI-gzGzoHsz',
+      appKey     : 'JcH8HthT0oLlyt1SvyYTODtn',
+      placeholder: "支持Markdown语法噢~",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+</body>
+</html>
